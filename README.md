@@ -31,10 +31,14 @@ d. Go to [http://localhost:3000](http://localhost:3000)
 
 ### 3. (Optional) Discord bot:
 a. Go to backend : `cd backend`
+
 b. Fill DISCORD_BOT_TOKEN and DISCORD_CLIENT_ID in .env file `cp .env.example .env`
+
 c. (Optional) To summarize using `chatgpt` Fill `OPENAI_API_KEY` with your api key and set `USE_CHAT_GPT` to some non empty value say `1`
-c. activate venv `source venv/bin/activate`
-d. Run bot:  `python bot.py`
+
+d. activate venv `source venv/bin/activate`
+
+e. Run bot:  `python bot.py`
 
 The bot should have access to read and send messages in the server.
 
