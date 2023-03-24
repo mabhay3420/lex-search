@@ -1,4 +1,4 @@
-from creds import OPENAI_API_KEY
+from creds import OPENAI_API_KEY, USE_CHAT_GPT
 from langchain.chat_models import ChatOpenAI
 from langchain import PromptTemplate, LLMChain
 from langchain.prompts.chat import (
@@ -44,24 +44,14 @@ def respond(message, context):
 # openai.api_key = OPENAI_API_KEY
 
 async def generate_response(message):
-    # return "Hello world"
-    # prompt = "User: {}\nBot:".format(message)
-
-    # response = openai.Completion.create(
-    #     engine="text-davainci",
-    #     prompt=prompt,
-    #     max_tokens=1024,
-    #     n=1,
-    #     stop=None,
-    #     temperature=0.5,
-    # )
-
-    # return response.choices[0].text.strip()
-    context = search_similar(message)
+    context = await search_similar(message)
     processed_context = "\n".join([f"{i}. {c['data']['transcript']['content']}" for i, c in enumerate(context)])
     print(processed_context)
-    # chat_gpt_response = respond(message, processed_context)
-    chat_gpt_response = "Here are few episodes that might be relevant to your question:"
+
+    if USE_CHAT_GPT:
+        chat_gpt_response = respond(message, processed_context)
+    else:
+        chat_gpt_response = "Here are few episodes that might be relevant to your question:"
 
     response = f"""
 {chat_gpt_response}

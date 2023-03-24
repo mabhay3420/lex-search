@@ -4,7 +4,7 @@ import numpy as np
 
 
 @timer
-def embed_local(text_list, model, tokenizer) :
+async def embed_local(text_list, model, tokenizer) :
     text_embeddings = []
 
     # Preprocess and create embeddings for each tweet

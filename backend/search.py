@@ -9,8 +9,8 @@ import fire
 
 
 @timer
-def search_similar(query, text_list = transcripts, index = index, model = model, tokenizer = tokenizer, provider=provider, top_k=5):
-    query_embedding = generate_embeddings([query], model, tokenizer, provider)
+async def search_similar(query, text_list = transcripts, index = index, model = model, tokenizer = tokenizer, provider=provider, top_k=5):
+    query_embedding = await generate_embeddings([query], model, tokenizer, provider)
     # return
     distances, indices = index.search(query_embedding, top_k)
 
