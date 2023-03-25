@@ -2,6 +2,10 @@
 
 Search for a phrase or question from all across Lex Fridman Podcast
 
+Webapp Demo: https://www.loom.com/share/b11a595ad66b407bafb3af6320125a46
+
+Discord Bot Demo: https://www.loom.com/share/4e19faae9905499193643a53a1bb9457
+
 ## Setup
 ### 1. Backend setup
 a.  Move to backend directory : `cd backend`
